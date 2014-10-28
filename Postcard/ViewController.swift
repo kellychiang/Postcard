@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextFiekd: UITextField!
     @IBOutlet weak var mailButton: UIButton!
@@ -35,8 +36,16 @@ class ViewController: UIViewController {
         messageLabel.text = enterMessageTextFiekd.text
         messageLabel.textColor = UIColor.redColor()
         
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextField.text
+        nameLabel.textColor = UIColor.blueColor()
+        
         enterMessageTextFiekd.text = ""
         enterMessageTextFiekd.resignFirstResponder()
+        
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
+        
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
         
     }
